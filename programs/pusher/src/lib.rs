@@ -24,6 +24,8 @@ pub struct Initialize<'info> {
     pub user: Signer<'info>,
     pub system_program: Program<'info, System>,
     pub counter: Account<'info, Counter>,
+    #[account(init, payer = user, space = 8 + 8)]
+    pub counter: Account<'info, Counter>,
     // pub pushIntoBlockchain: Account<'info, PushIntoBlockchain>,
 }
 #[account]
